@@ -7,10 +7,28 @@
     font-family: "Poppins", sans-serif;
 }
 
+:root{
+    --background-color: #F2F9FE;
+    --dark1-color: #223344;
+    --gray-color: #909193;
+    --blue-color: #2A4DD0;
+    --white-color: #ffffff;
+    --light-color: #F2F9FE;
+}
+
+.dark-theme{
+    --background-color: #111729;
+    --dark1-color: #F2F9FE;
+    --gray-color: #909193;
+    --blue-color: #2A4DD0;
+    --white-color: #ffffff;
+    --light-color: #F2F9FE;
+}
+
 .main-section{
     width: 100%;
     min-height: 100vh;
-    background-color: #F2F9FE;
+    background-color: var(--background-color);
 }
 
 /* Header Section */
@@ -48,22 +66,23 @@ nav > img{
     text-decoration: none;
     font-weight: 600;
     padding: 10px;
-    color: #909193;
+    color: var(--gray-color);
     transition: all .40s ease;
 }
 
 .menu-link span{
-    color: #223344;
+    color: var(--dark1-color);
 }
 
 .toggle{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 48px;
+    width: 45px;
     background-color: #223344;
     border-radius: 30px;
     padding: 2px;
+    position: relative;
 }
 
 .toggle .toggle-img{
@@ -73,13 +92,32 @@ nav > img{
     border-radius: 50%;
 }
 
-.toggle .sun{
-    z-index: 1;
-    background-color: #F2F9FE;
-}
-
 .toggle-img img{
     width: 15px;
+    z-index: 10;
+}
+
+.background{
+    position: absolute;
+    background-color: white;
+    top: 2px;
+    right: 2px;
+    width: 19px;
+    height: 19px;
+    border-radius: 50%;
+    transition: transform .40s ease;
+}
+
+.toggle-active .background{
+    transform: translateX(-22px);
+}
+
+.toggle-active .sun img{
+    filter: brightness(0) invert(1);
+}
+
+.toggle-active .moon img{
+    content: url("../assets/Moon_fill.svg");
 }
 
 
@@ -109,13 +147,13 @@ nav > img{
 .simple-text p{
     text-transform: uppercase;
     font-weight: 600;
-    color: #223344;
+    color: var(--dark1-color);
     margin-left: 10px;
     font-size: .9rem;
 }
 
 .hero-content h1{
-    color: #223344;
+    color: var(--dark1-color);
     font-size: 3.4rem;
     max-width: 380px;
     margin: 20px 0 30px;
@@ -136,19 +174,19 @@ nav > img{
 .button-div button{
     border-radius: 10px;
     border: none;
-    color: #f2f9fef6;
+    color: var(--light-color);
     font-size: 1rem;
     text-transform: uppercase;
     font-weight: 500;
     padding: 12px 20px;
-    background-color: #2A4DD0;
+    background-color: var(--blue-color);
 }
 
 .button-div a{
-    border-bottom: 2px solid #2A4DD0;
+    border-bottom: 2px solid var(--blue-color);
     text-decoration: none;
     font-weight: 600;
-    color: #2A4DD0;
+    color: var(--blue-color);
     margin-left: 25px;
 }
 

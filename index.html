@@ -19,9 +19,9 @@
 
         <header>
 
-            <nav>
+            <nav class="nav">
 
-                <img src="./assets/alarado-icon-homepage.svg" alt="">
+                <img id="brand" src="./assets/alarado-icon-homepage.svg" alt="">
                 
                 <menu class="menu">
                     <ul>
@@ -32,14 +32,17 @@
                     </ul>
                 </menu>
 
-                <div class="toggle">
-                    <div class="toggle-img">
+                <div class="toggle" id="toggle">
+                    <div class="toggle-img moon">
                         <img src="./assets/Moon_fill_light.svg" alt="">
                     </div>
 
                     <div class="toggle-img sun">
                         <img src="./assets/Sun_fill.svg" alt="">
                     </div>
+
+                    <div class="background"></div>
+
                 </div>
 
                 <div class="menu-icon"><i class="fa-solid fa-bars"></i></div>
@@ -84,6 +87,25 @@
         </section>
 
     </main>
+
+    <script>
+
+        var toggle = document.getElementById("toggle");
+        var brand = document.getElementById("brand");
+
+        toggle.onclick = function(){
+            document.body.classList.toggle("dark-theme");
+            if(document.body.classList.contains("dark-theme")){
+                toggle.classList.add("toggle-active");
+                brand.src = "./assets/alarado-icon-homepage-dark.svg";
+            }
+            else{
+                toggle.classList.remove("toggle-active");
+                brand.src = "./assets/alarado-icon-homepage.svg";
+            }
+        }
+
+    </script>
 
 </body>
 </html>
